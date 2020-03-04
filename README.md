@@ -8,10 +8,15 @@ This repository contains an example of a basic object oriented java program. Thi
 **StudentRecords**
 
   This code contains the different methods of the student records class. The methods in this class are described below.
+ 
   *Register:* Takes basic student information and registers a student by creating a student account.
+  
   *Login:* Allows a student to log in to their student account and enroll into courses.
+  
   *Display:* For faculty users: displays the list of students for each section.
+  
   *checkID:* Checks if student is already enrolled.
+  
   *checkEmail:* Checks for duplicate email address inputs.
   
 **Main**
