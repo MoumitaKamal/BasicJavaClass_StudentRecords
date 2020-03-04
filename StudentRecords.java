@@ -51,12 +51,12 @@ public class StudentRecords {
                     emailCheck=false;
                 }
                 else {
-                    student[studentNum].email=temp;
+                    student[studentNum].setEmail(temp);
                     break;
                 }
             }
             System.out.println("Password: ");
-            student[studentNum].password=mk.nextLine();
+            student[studentNum].setPass(mk.nextLine());
             System.out.println("you are successfully registered! you can now log in to your account.");
             maxLimit--;
             studentNum++;
@@ -72,21 +72,21 @@ public class StudentRecords {
         String email=mk.nextLine();
         String pass="";
         for(int c=0; c<studentNum; c++) {
-            if(student[c].email.equals(email)) {                                    // check if email is correct
+            if(student[c].getEmail().equals(email)) {                                    // check if email is correct
                 check=true;
                 System.out.println("enter password: ");
                 pass=mk.nextLine();
-                if(student[c].password.equals(pass)) {                              // check if password is correct
+                if(student[c].getPass().equals(pass)) {                              // check if password is correct
                     System.out.println("Login successfull!\n");
                     System.err.println("1.Section-01    Sunday: 12:30pm-2:00pm    "+seats[0]+" seats remaining \n"
                                            +"2.Section-02    Sunday: 2:30pm-4:00pm     "+seats[1]+" seats remaining\n"
                                            +"3.Section-03    Sunday: 5:30pm-7:00pm     "+seats[2]+" seats remaining");
                     System.out.println("\nenter 1 for section 01, 2 for section 02 and 3 for section 03");
                     secSelection=mk.nextInt();
-                    if(student[c].section==0){                                      // check if already enrolled
+                    if(student[c].getSec()==0){                                      // check if already enrolled
                         if(secSelection==1 || secSelection==2 || secSelection==3) { // input validation
                             if(seats[secSelection-1]>0) {                           // check seat availability
-                                student[c].section=secSelection;
+                                student[c].setSec(secSelection);
                                 System.out.println("congratulations! you are enrolled in section 0"+secSelection+"\n");
                                 seats[secSelection-1]--;
                             }else {
@@ -124,7 +124,7 @@ public class StudentRecords {
         }else {
             System.out.println("\n section-0"+x+"\n============");
             for(int c=0; c<studentNum; c++) {
-                if(student[c].section==x) {
+                if(student[c].getSec()==x) {
                     System.out.println("Name: "+student[c].name+"   SID: "+student[c].sid);
                 }
             }
@@ -144,7 +144,7 @@ public class StudentRecords {
     
     public boolean checkEmail(String e) {                                            // checks student email
         for(int c=0; c<studentNum; c++) {
-            if(student[c].email.equals(e)) {
+            if(student[c].getEmail().equals(e)) {
                 emailCheck=true;
                 break;
             }
