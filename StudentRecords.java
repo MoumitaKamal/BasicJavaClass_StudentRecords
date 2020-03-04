@@ -1,7 +1,8 @@
 /***********************************************************
  *Title: Student Records Class 
 
- *Description: Contains the different methods of the student records class. 
+ *Description: Contains the different methods of the student records class.
+ *Date: August 2015
  
  *Author: Moumita Kamal
  ***********************************************************/
